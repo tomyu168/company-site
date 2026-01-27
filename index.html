@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome JingOilChem</title>
 
   <!-- CSS -->
@@ -145,28 +146,27 @@
     /* ===== Mobile ===== */
     /* ===== Mobile ===== */
 	@media (max-width: 768px) {
+	  
 	  .header {
 	    top: 16px;
 	    padding: 0 16px;
 	    display: flex;
-	    flex-direction: column; /* 垂直排列 */
+	    flex-direction: column;
 	    align-items: center;
-	    gap: 20px; /* 增加LOGO和导航之间的距离 */
+	    gap: 14px;
 	  }
-	  
+
 	  .logo-center {
 	    position: relative;
 	    left: auto;
 	    top: auto;
 	    transform: none;
-	    margin: 0;
-	    order: 1; /* 确保logo在第一行 */
 	  }
-	  
+
 	  .logo-center img {
 	    height: 48px;
 	  }
-	  
+
 	  .top-nav {
 	    position: relative;
 	    right: auto;
@@ -174,15 +174,13 @@
 	    transform: none;
 	    width: 100%;
 	    padding-right: 0;
-	    order: 2; /* 确保导航在第二行 */
+	    margin-top: 6px;
 	  }
-	  
+
 	  .top-nav ul {
-	    display: flex;
-	    justify-content: center; /* 水平居中 */
+	    justify-content: center;
 	    gap: 16px;
 	    font-size: 12px;
-	    flex-wrap: wrap; /* 允许换行 */
 	  }
 	  
 	  .hero-bottom {
