@@ -18,14 +18,25 @@
     }
 
     /* ===== Top Nav ===== */
-    .top-nav {
+    /* ===== Header ===== */
+    .header {
       position: absolute;
       top: 20px;
-      left: 70%;
-      transform: translateX(-50%);
+      left: 0;
+      width: 100%;
+      padding: 0 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       z-index: 10;
     }
-
+    
+    /* ===== Logo ===== */
+    .logo img {
+      height: 40px;
+    }
+    
+    /* ===== Nav ===== */
     .top-nav ul {
       display: flex;
       gap: 30px;
@@ -34,6 +45,7 @@
       font-size: 14px;
       letter-spacing: 1px;
     }
+
 
     .top-nav li {
       cursor: pointer;
@@ -119,6 +131,11 @@
 <body>
 
   <!-- Nav -->
+  <header class="header">
+  <div class="logo">
+    <img src="logo.png" alt="Company Logo">
+  </div>
+
   <nav class="top-nav">
     <ul>
       <li data-scene="welcome">WELCOME</li>
@@ -127,6 +144,7 @@
       <li data-scene="rail">RAILWAY</li>
     </ul>
   </nav>
+</header>
 
   <!-- Hero -->
   <section class="hero" id="hero">
