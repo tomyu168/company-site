@@ -143,28 +143,30 @@
     }
 
     /* ===== Mobile ===== */
-    @media (max-width: 768px) {
-
-      .header {
+    /* ===== Mobile ===== */
+	@media (max-width: 768px) {
+	  .header {
 	    top: 16px;
 	    padding: 0 16px;
 	    display: flex;
-	    flex-direction: column;
+	    flex-direction: column; /* 垂直排列 */
 	    align-items: center;
-	    gap: 14px;
+	    gap: 20px; /* 增加LOGO和导航之间的距离 */
 	  }
-
+	  
 	  .logo-center {
 	    position: relative;
 	    left: auto;
 	    top: auto;
 	    transform: none;
+	    margin: 0;
+	    order: 1; /* 确保logo在第一行 */
 	  }
-
+	  
 	  .logo-center img {
 	    height: 48px;
 	  }
-
+	  
 	  .top-nav {
 	    position: relative;
 	    right: auto;
@@ -172,26 +174,28 @@
 	    transform: none;
 	    width: 100%;
 	    padding-right: 0;
-	    margin-top: 6px;
+	    order: 2; /* 确保导航在第二行 */
 	  }
-
+	  
 	  .top-nav ul {
-	    justify-content: center;
+	    display: flex;
+	    justify-content: center; /* 水平居中 */
 	    gap: 16px;
 	    font-size: 12px;
+	    flex-wrap: wrap; /* 允许换行 */
 	  }
-
-      .hero-bottom {
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 20px;
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-        text-align: center;
-        font-size: 12px;
-      }
-    }
+	  
+	  .hero-bottom {
+	    left: 50%;
+	    transform: translateX(-50%);
+	    bottom: 20px;
+	    gap: 20px;
+	    flex-wrap: wrap;
+	    justify-content: center;
+	    text-align: center;
+	    font-size: 12px;
+	  }
+	}
 
 
   </style>
