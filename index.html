@@ -1,1 +1,57 @@
-aa
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Bulmarket Clone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="logo">BULMARKET</div>
+    <ul class="menu">
+      <li><a href="#" data-target="welcome">WELCOME</a></li>
+      <li><a href="#" data-target="about">ABOUT US</a></li>
+      <li><a href="#" data-target="activities">ACTIVITIES</a></li>
+      <li><a href="#" data-target="sustainability">SUSTAINABILITY</a></li>
+      <li><a href="#" data-target="careers">CAREERS</a></li>
+      <li><a href="#" data-target="news">NEWS</a></li>
+      <li><a href="#" data-target="contacts">CONTACTS</a></li>
+    </ul>
+  </nav>
+
+  <!-- 主要区域：背景图 + 文字 -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">PRODUCTION OF BIODIESEL</h1>
+      <p class="hero-text">
+        Bulmarket Group is a leader in the transformation efforts of the energy and transport industry in South-Eastern Europe.<br>
+        We work for a sustainable future by processing renewable and waste products into high-quality clean fuels and providing efficient solutions for their transportation.
+      </p>
+    </div>
+
+    <!-- 底部四个模块 -->
+    <div class="modules">
+      <div class="module" data-bg="fuel.jpg" data-title="Trade in Fuels and Products" data-desc="Fuels & Products">
+        <div class="icon">🛢️</div>
+        <div class="label">Trade in Fuels and Products</div>
+      </div>
+      <div class="module" data-bg="biodiesel.jpg" data-title="Production of Biodiesel (Astra Bioplant)" data-desc="Biodiesel">
+        <div class="icon">🏭</div>
+        <div class="label">Production of Biodiesel</div>
+      </div>
+      <div class="module" data-bg="railway.jpg" data-title="Railway Transport" data-desc="Railway">
+        <div class="icon">🚂</div>
+        <div class="label">Railway Transport</div>
+      </div>
+      <div class="module" data-bg="port.jpg" data-title="Port Bullmarket" data-desc="Port">
+        <div class="icon">🚢</div>
+        <div class="label">Port Bullmarket</div>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
