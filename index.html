@@ -32,7 +32,14 @@
     }
     
     /* ===== Logo ===== */
-    .logo img {
+    .logo-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    }
+    
+    .logo-center img {
       height: 40px;
     }
     
@@ -131,8 +138,8 @@
 <body>
 
   <!-- Nav -->
-  <header class="header">
-  <div class="logo">
+<header class="header">
+  <div class="logo-center">
     <img src="logo1.png" alt="Company Logo">
   </div>
 
