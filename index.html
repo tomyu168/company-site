@@ -2,56 +2,200 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Bulmarket Clone</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Hero Background Switch Demo</title>
+
+  <!-- CSS -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #000;
+    }
+
+    /* ===== Top Nav ===== */
+    .top-nav {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+
+    .top-nav ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      color: #fff;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .top-nav li {
+      cursor: pointer;
+      position: relative;
+    }
+
+    .top-nav li::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      background: red;
+      transition: width .3s;
+    }
+
+    .top-nav li:hover::after {
+      width: 100%;
+    }
+
+    /* ===== Hero ===== */
+    .hero {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      transition: background-image .4s ease;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.45);
+    }
+
+    /* ===== Content ===== */
+    .hero-content {
+      position: absolute;
+      top: 40%;
+      left: 10%;
+      max-width: 600px;
+      color: #fff;
+      z-index: 2;
+    }
+
+    .hero-content h1 {
+      font-size: 46px;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+    }
+
+    .hero-content p {
+      line-height: 1.6;
+      font-size: 16px;
+      opacity: .9;
+    }
+
+    /* ===== Bottom Items ===== */
+    .hero-bottom {
+      position: absolute;
+      bottom: 40px;
+      left: 10%;
+      display: flex;
+      gap: 40px;
+      color: #fff;
+      z-index: 2;
+    }
+
+    .hero-item {
+      cursor: pointer;
+      opacity: .6;
+      transition: opacity .2s;
+    }
+
+    .hero-item:hover {
+      opacity: 1;
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- 导航栏 -->
-  <nav class="navbar">
-    <div class="logo">BULMARKET</div>
-    <ul class="menu">
-      <li><a href="#" data-target="welcome">WELCOME</a></li>
-      <li><a href="#" data-target="about">ABOUT US</a></li>
-      <li><a href="#" data-target="activities">ACTIVITIES</a></li>
-      <li><a href="#" data-target="sustainability">SUSTAINABILITY</a></li>
-      <li><a href="#" data-target="careers">CAREERS</a></li>
-      <li><a href="#" data-target="news">NEWS</a></li>
-      <li><a href="#" data-target="contacts">CONTACTS</a></li>
+  <!-- Nav -->
+  <nav class="top-nav">
+    <ul>
+      <li data-scene="welcome">WELCOME</li>
+      <li data-scene="fuel">FUELS</li>
+      <li data-scene="bio">BIODIESEL</li>
+      <li data-scene="rail">RAILWAY</li>
     </ul>
   </nav>
 
-  <!-- 主要区域：背景图 + 文字 -->
-  <section id="hero" class="hero">
+  <!-- Hero -->
+  <section class="hero" id="hero">
     <div class="hero-content">
-      <h1 class="hero-title">PRODUCTION OF BIODIESEL</h1>
-      <p class="hero-text">
-        Bulmarket Group is a leader in the transformation efforts of the energy and transport industry in South-Eastern Europe.<br>
-        We work for a sustainable future by processing renewable and waste products into high-quality clean fuels and providing efficient solutions for their transportation.
+      <h1 id="hero-title">Production of Fuels</h1>
+      <p id="hero-text">
+        Bulmarket Group is a leader in the transformation efforts of the energy and transport industry.
       </p>
     </div>
 
-    <!-- 底部四个模块 -->
-    <div class="modules">
-      <div class="module" data-bg="fuel.jpg" data-title="Trade in Fuels and Products" data-desc="Fuels & Products">
-        <div class="icon">🛢️</div>
-        <div class="label">Trade in Fuels and Products</div>
-      </div>
-      <div class="module" data-bg="biodiesel.jpg" data-title="Production of Biodiesel (Astra Bioplant)" data-desc="Biodiesel">
-        <div class="icon">🏭</div>
-        <div class="label">Production of Biodiesel</div>
-      </div>
-      <div class="module" data-bg="railway.jpg" data-title="Railway Transport" data-desc="Railway">
-        <div class="icon">🚂</div>
-        <div class="label">Railway Transport</div>
-      </div>
-      <div class="module" data-bg="port.jpg" data-title="Port Bullmarket" data-desc="Port">
-        <div class="icon">🚢</div>
-        <div class="label">Port Bullmarket</div>
-      </div>
+    <div class="hero-bottom">
+      <div class="hero-item" data-scene="fuel">Trade in Fuels</div>
+      <div class="hero-item" data-scene="bio">Biodiesel</div>
+      <div class="hero-item" data-scene="rail">Railway Transport</div>
+      <div class="hero-item" data-scene="port">Port Services</div>
     </div>
   </section>
 
-  <script src="script.js"></script>
+  <!-- JS -->
+  <script>
+    const scenes = {
+      welcome: {
+        bg: 'https://images.unsplash.com/photo-1581091870627-3d6c1b9bb4a6',
+        title: 'Production of Fuels',
+        text: 'Bulmarket Group is a leader in energy and transport transformation.'
+      },
+      fuel: {
+        bg: 'https://images.unsplash.com/photo-1509395062183-67c5ad6faff9',
+        title: 'Trade in Fuels',
+        text: 'Wholesale trade and logistics of fuels and energy products.'
+      },
+      bio: {
+        bg: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc',
+        title: 'Biodiesel Production',
+        text: 'Processing renewable and waste products into clean fuels.'
+      },
+      rail: {
+        bg: 'https://images.unsplash.com/photo-1504196606672-aef5c9cefc92',
+        title: 'Railway Transport',
+        text: 'Integrated railway transport and logistics solutions.'
+      },
+      port: {
+        bg: 'https://images.unsplash.com/photo-1509395285091-5aa1a9b2f35c',
+        title: 'Port Services',
+        text: 'Port logistics and storage infrastructure.'
+      }
+    }
+
+    const hero = document.getElementById('hero')
+    const title = document.getElementById('hero-title')
+    const text = document.getElementById('hero-text')
+
+    function switchScene(key) {
+      const s = scenes[key]
+      if (!s) return
+      hero.style.backgroundImage = `url(${s.bg})`
+      title.innerText = s.title
+      text.innerText = s.text
+    }
+
+    document.querySelectorAll('[data-scene]').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        switchScene(el.dataset.scene)
+      })
+    })
+
+    // 初始背景
+    switchScene('welcome')
+  </script>
+
 </body>
 </html>
