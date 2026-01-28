@@ -147,13 +147,32 @@
     /* ===== Mobile ===== */
 	@media (max-width: 768px) {
 	  
+	  .hero-content{
+	    top: 26%;          /* 原来40%太低了，改成 22~30% 都可以调 */
+	    left: 6%;
+	    right: 6%;
+	    max-width: none;
+	  }
+
+	  .hero-content h1{
+	    font-size: 34px;   /* 46太大了，容易把下面挤出屏幕 */
+	    line-height: 1.05;
+	    margin-bottom: 12px;
+	  }
+
+	  .hero-content p{
+	    font-size: 14px;
+	    line-height: 1.55;
+	  }
+	  
+  
 	  .header {
 	    top: 16px;
 	    padding: 0 16px;
 	    display: flex;
 	    flex-direction: column;
 	    align-items: center;
-	    gap: 14px;
+	    gap: 8px;
 	  }
 
 	  .logo-center {
@@ -174,7 +193,7 @@
 	    transform: none;
 	    width: 100%;
 	    padding-right: 0;
-	    margin-top: 6px;
+	    margin-top: 3px;
 	  }
 
 	  .top-nav ul {
@@ -183,15 +202,22 @@
 	    font-size: 12px;
 	  }
 	  
-	  .hero-bottom {
+	  .hero-bottom{
 	    left: 50%;
 	    transform: translateX(-50%);
-	    bottom: 20px;
-	    gap: 20px;
-	    flex-wrap: wrap;
-	    justify-content: center;
+	    bottom: 14px;              /* 再往下贴一点 */
+	    width: calc(100% - 32px);  /* 两边留白 */
+	    display: grid;
+	    grid-template-columns: 1fr 1fr;  /* 两列 */
+	    gap: 12px 18px;
 	    text-align: center;
 	    font-size: 12px;
+	  }
+
+	  .hero-item{
+	    width: 100%;
+	    opacity: .85;
+	    padding: 6px 4px;          /* 让每个item像按钮 */
 	  }
 	}
 
@@ -335,3 +361,5 @@
 
 </body>
 </html>
+
+
