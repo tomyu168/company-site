@@ -210,9 +210,9 @@
   <nav class="top-nav">
     <ul>
       <li data-scene="welcome">WELCOME</li>
-      <li data-scene="fuel">FUELS</li>
-      <li data-scene="bio">BIODIESEL</li>
-      <li data-scene="rail">RAILWAY</li>
+      <li data-scene="marinefuel">MarineFuel Component</li>
+      <li data-scene="feedstock">Chemical Feedstock</li>
+      <li data-scene="capability">Processing Capabilities</li>
     </ul>
   </nav>
 </header>
@@ -220,17 +220,19 @@
   <!-- Hero -->
   <section class="hero" id="hero">
     <div class="hero-content">
-      <h1 id="hero-title">Production of Fuels</h1>
+      <h1 id="hero-title">Sustainable Tire Pyrolysis Oil Feedstocks</h1>
       <p id="hero-text">
-        Bulmarket Group is a leader in the transformation efforts of the energy and transport industry.
+        We specialize in the sustainable distillation and fractionation of tire-derived pyrolysis oil,<br>
+        producing consistent secondary hydrocarbon feedstocks for industrial and energy applications, <br>
+        supported by ISCC EU and RED II compliance.
       </p>
     </div>
 
     <div class="hero-bottom">
-      <div class="hero-item" data-scene="fuel">Trade in Fuels</div>
-      <div class="hero-item" data-scene="bio">Biodiesel</div>
-      <div class="hero-item" data-scene="rail">Railway Transport</div>
-      <div class="hero-item" data-scene="port">Port Services</div>
+      <div class="hero-item" data-scene="sustainability">Sustainability</div>
+      <div class="hero-item" data-scene="export">Compliance & Export</div>
+      <div class="hero-item" data-scene="feedstock">Contact</div>
+      <div class="hero-item" data-scene="about">About Us</div>
     </div>
   </section>
 
@@ -239,8 +241,10 @@
     const scenes = {
       welcome: {
         bg: 'pic1.jpg',
-        title: 'Production of Fuels',
-        text: 'Bulmarket Group is a leader in energy and transport transformation.'
+        title: '',
+        text: 'We specialize in the sustainable distillation and fractionation of tire-derived pyrolysis oil,<br>
+        producing consistent secondary hydrocarbon feedstocks for industrial and energy applications, <br>
+        supported by ISCC EU and RED II compliance.'
       },
       fuel: {
         bg: 'https://images.unsplash.com/photo-1509395062183-67c5ad6faff9',
@@ -259,8 +263,11 @@
       },
       port: {
         bg: 'https://images.unsplash.com/photo-1509395285091-5aa1a9b2f35c',
-        title: 'Port Services',
-        text: 'Port logistics and storage infrastructure.'
+        title: 'Compliance & Export',
+        text: 'Our products are supplied as industrial feedstocks.
+		       We support customers with relevant documentation and cooperate on compliance requirements under applicable regulations,<br>
+		    including EU customs and downstream regulatory frameworks.<br>
+			 Product classification and final use are defined by the buyer in accordance with local laws and standards.'
       }
     }
 
