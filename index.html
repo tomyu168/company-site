@@ -316,7 +316,8 @@
       if (!s) return
       hero.style.backgroundImage = `url(${s.bg})`
       title.innerText = s.title
-      text.innerText = s.text
+      text.innerHTML = s.text
+
     }
 
     document.querySelectorAll('[data-scene]').forEach(el => {
